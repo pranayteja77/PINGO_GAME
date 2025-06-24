@@ -9,8 +9,16 @@
 <body>
   <div class="container">
     <h1>PINGO 🎯</h1>
-    <div id="game">
-      <div id="status">Your Turn</div>
+    
+    <div id="mode-selection">
+      <h3>Select Game Mode:</h3>
+      <button onclick="selectMode('auto')">Auto Shuffle</button>
+      <button onclick="selectMode('manual')">Manual Setup</button>
+    </div>
+    
+    <div id="game" style="display:none;">
+      <div id="timer">Time Left: 2:30</div>
+      <div id="status">Place your numbers</div>
       
       <div class="grid-container">
         <div class="col-letters" id="col-letters"></div>
@@ -24,13 +32,15 @@
         </div>
       </div>
       
+      <div id="number-pool" class="number-pool"></div>
       <div id="winner"></div>
     </div>
+    
     <div id="computer-section" style="display:none;">
       <h2>Computer's Card</h2>
       <div class="board" id="computer-board"></div>
     </div>
-    <button onclick="startGame()">🔁 Restart</button>
+    <button id="restart-btn" onclick="resetGame()">🔁 Restart</button>
   </div>
   <script src="pingo-final.js"></script>
 </body>
