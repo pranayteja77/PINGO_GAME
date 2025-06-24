@@ -46,6 +46,22 @@ function startGame() {
   document.getElementById("timer").className = "";
   document.getElementById("timer").textContent = "Time Left: 2:30";
   
+  // Clear and recreate letter containers
+  document.getElementById("row-letters").innerHTML = '';
+  document.getElementById("col-letters").innerHTML = '';
+  document.getElementById("diag-left").innerText = '';
+  document.getElementById("diag-right").innerText = '';
+  
+  for (let i = 0; i < 5; i++) {
+    const rowLetter = document.createElement('div');
+    rowLetter.className = 'letter';
+    document.getElementById("row-letters").appendChild(rowLetter);
+    
+    const colLetter = document.createElement('div');
+    colLetter.className = 'letter';
+    document.getElementById("col-letters").appendChild(colLetter);
+  }
+
   if (gameMode === "auto") {
     numbers = shuffle([...numbers]);
     renderBoard();
@@ -168,7 +184,6 @@ function startGamePlay() {
   computerMarks = [];
 }
 
-// Drag and Drop Functions
 function handleDragStart(e) {
   dragSrcEl = this;
   e.dataTransfer.effectAllowed = 'move';
@@ -402,6 +417,8 @@ function shuffle(arr) {
   return arr;
 }
 
+
 window.onload = function() {
   document.getElementById("restart-btn").style.display = "none";
-};
+};  
+
