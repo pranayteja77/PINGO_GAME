@@ -1,0 +1,147 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5faff;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  background: #ddd;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.marked { 
+  background: green; 
+  color: white; 
+}
+.computer { 
+  background: dodgerblue; 
+  color: white; 
+}
+.both { 
+  background: purple; 
+  color: white; 
+}
+.strike { 
+  background: rgb(225, 24, 24) !important; 
+  text-decoration: line-through;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 320px;
+  margin: 10px auto;
+}
+
+.grid-wrapper {
+  display: flex;
+  position: relative;
+}
+
+#row-letters {
+  position: absolute;
+  left: calc(100% + 5px);
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 320px;
+  justify-content: space-between;
+}
+
+.col-letters {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  margin-bottom: 5px;
+}
+
+.diag-letters {
+  position: relative;
+  width: 320px;
+  height: 20px;
+  margin: 5px 0;
+}
+
+.letter {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(6, 182, 241);
+  width: 25px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+#diag-left {
+  position: absolute;
+  left: -25px;
+  top: 0;
+}
+
+#diag-right {
+  position: absolute;
+  right: -25px;
+  top: 0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 18px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: #3e8e41;
+  transform: scale(1.05);
+}
+
+#status {
+  font-size: 24px;
+  margin: 10px 0;
+  min-height: 36px;
+}
+
+#winner {
+  font-size: 24px;
+  color: #4caf50;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+#computer-section {
+  margin-top: 30px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PINGO Game</title>
+  <link rel="stylesheet" href="pingo-final.css">
+</head>
+<body>
+  <div class="container">
+    <h1>PINGO 🎯</h1>
+    <div id="game">
+      <div id="status">Your Turn</div>
+      
+      <div class="grid-container">
+        <div class="col-letters" id="col-letters"></div>
+        <div class="diag-letters">
+          <div id="diag-left" class="letter"></div>
+          <div id="diag-right" class="letter"></div>
+        </div>
+        <div class="grid-wrapper">
+          <div id="player-board" class="board"></div>
+          <div id="row-letters"></div>
+        </div>
+      </div>
+      
+      <div id="winner"></div>
+    </div>
+    <div id="computer-section" style="display:none;">
+      <h2>Computer's Card</h2>
+      <div class="board" id="computer-board"></div>
+    </div>
+    <button onclick="startGame()">🔁 Restart</button>
+  </div>
+  <script src="pingo-final.js"></script>
+</body>
+</html>
